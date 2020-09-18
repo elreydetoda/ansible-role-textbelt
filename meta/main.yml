@@ -1,5 +1,6 @@
 galaxy_info:
-  author: Alex
+  author: elreydetoda
+  role_name: packer
   description: send text message through textbelt.com's api service
 
   # If the issue tracker for your role is not on github, uncomment the
