@@ -1,2 +1,27 @@
 ---
 # tasks file for ansible-role-textbelt
+
+- name: sending textbelt api call
+  uri:
+    url: '{{ textbelt_url }}'
+    method: POST
+    body_format: form-urlencoded
+    body:
+      phone: '{{ phone_number }}'
+      message: '{{ message_contents }}'
+      key: '{{ api_key }}'
+  register: textbelt_response
+
+- name: setting response to register
+  set_fact:
+    textbelt_status: "{{ textbelt_response.json['success'] }}"
+
+- name: outputting textbelt response if failed to send
+  debug:
+    msg: '{{ textbelt_response }}'
+  when:  textbelt_status is false
+
+- name: failing if text didn't send
+  fail:
+    msg: "The text message didn't send properly, check out response above."
+  when:  textbelt_status is false

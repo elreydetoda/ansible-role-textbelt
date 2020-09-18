@@ -1,2 +1,3 @@
 ---
-# vars file for ansible-role-textbelt
+api_key: ''
+phone_number: ''
