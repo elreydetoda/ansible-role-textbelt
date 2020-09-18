@@ -25,3 +25,12 @@
   fail:
     msg: "The text message didn't send properly, check out response above."
   when:  textbelt_status is false
+
+- name: checking quota count
+  set_fact:
+    textbelt_quota: "{{ textbelt_response.json['quotaRemaining'] }}"
+
+- name: informing if quote below warning
+  debug:
+    msg: "You should probably refill your quote, it's currently at: {{ textbelt_quota }}"
+  when: textbelt_quota is version(quota_warning_number, '<')
