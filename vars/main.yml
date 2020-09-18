@@ -1,3 +1,5 @@
 ---
 api_key: ''
+# I haven't tested putting any - or () in the number field
+#   so, I would just put all the digits together
 phone_number: ''
