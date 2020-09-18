@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/elreydetoda/ansible-role-textbelt.svg?branch=master)](https://travis-ci.com/elreydetoda/ansible-role-textbelt)
+
 # ansible-role-textbelt
 
 > Textbelt is a no-nonsense SMS API built for developers who just want to send SMS. Thousands of clients prefer Textbelt over other SMS providers for our ease of setup, simple, predictable pricing packages, and personal support.
