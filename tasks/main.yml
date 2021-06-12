@@ -19,12 +19,12 @@
 - name: outputting textbelt response if failed to send
   debug:
     msg: '{{ textbelt_response }}'
-  when:  textbelt_status is false
+  when: textbelt_status is false
 
 - name: failing if text didn't send
   fail:
     msg: "The text message didn't send properly, check out response above."
-  when:  textbelt_status is false
+  when: textbelt_status is false
 
 - name: checking quota count
   set_fact:
